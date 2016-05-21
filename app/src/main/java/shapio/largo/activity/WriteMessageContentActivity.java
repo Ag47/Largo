@@ -1,11 +1,13 @@
 package shapio.largo.activity;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
@@ -36,6 +38,7 @@ public class WriteMessageContentActivity extends AppCompatActivity {
 
 //        expandableLayoutListView.setAdapter(arrayAdapter);
         send();
+        setFont();
     }
 
     private void initPaperBackground() {
@@ -167,5 +170,11 @@ public class WriteMessageContentActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void setFont()
+    {
+        EditText editText = (EditText) findViewById(R.id.editText);
+        editText.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/happy.ttf"));
     }
 }

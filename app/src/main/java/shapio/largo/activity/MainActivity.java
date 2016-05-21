@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigation.addItem(item2);
         bottomNavigation.addItem(item3);
         bottomNavigation.setDefaultBackgroundColor(Color.parseColor("#FEFEFE"));
-        bottomNavigation.setNotification("4", 1);
+        bottomNavigation.setNotification("3", 1);
         bottomNavigation.setCurrentItem(1);
 
     }
