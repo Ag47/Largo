@@ -16,6 +16,11 @@ class UserController extends BaseController
         return $this->collection(User::all(), new UserTransformer);
     }
 
+    public function cardView()
+    {
+        return view('card');
+    }
+
     public function store(Request $request)
     {
         $rules = [
