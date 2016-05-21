@@ -17,10 +17,9 @@ import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
 import shapio.largo.R;
 
 public class WriteMessageContentActivity extends AppCompatActivity {
-    AHBottomNavigation bottomNavigation;
     RelativeLayout mLayout;
     private Toolbar toolbar;
-    private final String[] array = {"Add gift"};
+//    private final String[] array = {"Add gift"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,15 +27,15 @@ public class WriteMessageContentActivity extends AppCompatActivity {
         setContentView(R.layout.activity_write_message);
 
         initToolBar();
-        initBottomBar();
+//        initBottomBar();
         initPaperBackground();
 
-        handleBottomBarOnclick();
+//        handleBottomBarOnclick();
 
-        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.view_row, R.id.header_text, array);
-        final ExpandableLayoutListView expandableLayoutListView = (ExpandableLayoutListView) findViewById(R.id.listview);
+//        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.view_row, R.id.header_text, array);
+//        final ExpandableLayoutListView expandableLayoutListView = (ExpandableLayoutListView) findViewById(R.id.listview);
 
-        expandableLayoutListView.setAdapter(arrayAdapter);
+//        expandableLayoutListView.setAdapter(arrayAdapter);
     }
 
     private void initPaperBackground() {
@@ -65,41 +64,41 @@ public class WriteMessageContentActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
     }
 
-    private void initBottomBar() {
+//    private void initBottomBar() {
+//
+//        bottomNavigation = (AHBottomNavigation) findViewById(R.id.bottom_navigation);
+//
+//        AHBottomNavigationItem item1 = new AHBottomNavigationItem(R.string.tab_1, R.drawable.ic_create_black_24dp, R.color.color_tab_1);
+//        AHBottomNavigationItem item2 = new AHBottomNavigationItem(R.string.tab_2, R.drawable.receive, R.color.color_tab_2);
+//        AHBottomNavigationItem item3 = new AHBottomNavigationItem(R.string.tab_3, R.drawable.sent, R.color.color_tab_3);
+//        bottomNavigation.addItem(item1);
+//        bottomNavigation.addItem(item2);
+//        bottomNavigation.addItem(item3);
+//        bottomNavigation.setDefaultBackgroundColor(Color.parseColor("#FEFEFE"));
+//        bottomNavigation.setNotification("4", 1);
+//        bottomNavigation.setCurrentItem(0);
+//    }
+//    private void handleBottomBarOnclick(){
+//        bottomNavigation.setOnTabSelectedListener(new AHBottomNavigation.OnTabSelectedListener() {
+//            @Override
+//            public void onTabSelected(int position, boolean wasSelected) {
+//                switch (position)
+//                {
+//                    case 0:
+//                        Toast.makeText(WriteMessageContentActivity.this,"you clicked write",Toast.LENGTH_LONG).show();
+//                        startActivity(new Intent(WriteMessageContentActivity.this, SelectPaperThemeActivity.class));
+//                        break;
+//                    case 1:
+//                        Toast.makeText(WriteMessageContentActivity.this,"you clicked Receive",Toast.LENGTH_LONG).show();
+//                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+//                        break;
+//                    case 2:
+//                        Toast.makeText(WriteMessageContentActivity.this,"you clicked sent",Toast.LENGTH_LONG).show();
+//                        break;
+//
+//                }
+//            }
+//        });
 
-        bottomNavigation = (AHBottomNavigation) findViewById(R.id.bottom_navigation);
-
-        AHBottomNavigationItem item1 = new AHBottomNavigationItem(R.string.tab_1, R.drawable.ic_create_black_24dp, R.color.color_tab_1);
-        AHBottomNavigationItem item2 = new AHBottomNavigationItem(R.string.tab_2, R.drawable.receive, R.color.color_tab_2);
-        AHBottomNavigationItem item3 = new AHBottomNavigationItem(R.string.tab_3, R.drawable.sent, R.color.color_tab_3);
-        bottomNavigation.addItem(item1);
-        bottomNavigation.addItem(item2);
-        bottomNavigation.addItem(item3);
-        bottomNavigation.setDefaultBackgroundColor(Color.parseColor("#FEFEFE"));
-        bottomNavigation.setNotification("4", 1);
-        bottomNavigation.setCurrentItem(0);
-    }
-    private void handleBottomBarOnclick(){
-        bottomNavigation.setOnTabSelectedListener(new AHBottomNavigation.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(int position, boolean wasSelected) {
-                switch (position)
-                {
-                    case 0:
-                        Toast.makeText(WriteMessageContentActivity.this,"you clicked write",Toast.LENGTH_LONG).show();
-                        startActivity(new Intent(WriteMessageContentActivity.this, SelectPaperThemeActivity.class));
-                        break;
-                    case 1:
-                        Toast.makeText(WriteMessageContentActivity.this,"you clicked Receive",Toast.LENGTH_LONG).show();
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                        break;
-                    case 2:
-                        Toast.makeText(WriteMessageContentActivity.this,"you clicked sent",Toast.LENGTH_LONG).show();
-                        break;
-
-                }
-            }
-        });
-    }
 
 }
