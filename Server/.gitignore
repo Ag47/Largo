@@ -1,0 +1,10 @@
+/vendor
+/node_modules
+Homestead.yaml
+Homestead.json
+.env
+_ide_helper*.php
+composer.lock
+/public/profile/*
+/public/image/*
+/public/video/*
