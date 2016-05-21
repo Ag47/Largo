@@ -2,28 +2,26 @@ package shapio.largo.activity;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.annotation.IdRes;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
-import com.roughike.bottombar.BottomBar;
-import com.roughike.bottombar.OnMenuTabClickListener;
 
 import java.util.ArrayList;
 
 import shapio.largo.R;
 import shapio.largo.adapter.ReceiveMailAdapter;
-import shapio.largo.adapter.SelectPaperAdapter;
 import shapio.largo.helper.SimpleDividerItemDecoration;
 import shapio.largo.model.Mail;
-import shapio.largo.model.Paper;
 
 public class MainActivity extends AppCompatActivity {
     AHBottomNavigation bottomNavigation;
@@ -44,6 +42,15 @@ public class MainActivity extends AppCompatActivity {
         initReceiveItem();
         initRecyclerView();
         handleBottomBarOnclick();
+
+        rotateMail();
+        trigger();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
     }
 
     private void initRecyclerView() {
@@ -96,21 +103,21 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigation.setCurrentItem(1);
 
     }
-    private void handleBottomBarOnclick(){
+
+    private void handleBottomBarOnclick() {
         bottomNavigation.setOnTabSelectedListener(new AHBottomNavigation.OnTabSelectedListener() {
             @Override
             public void onTabSelected(int position, boolean wasSelected) {
-                switch (position)
-                {
+                switch (position) {
                     case 0:
-                        Toast.makeText(MainActivity.this,"you clicked write",Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivity.this, "you clicked write", Toast.LENGTH_LONG).show();
                         startActivity(new Intent(MainActivity.this, SelectPaperThemeActivity.class));
                         break;
                     case 1:
-                        Toast.makeText(MainActivity.this,"you clicked Receive",Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivity.this, "you clicked Receive", Toast.LENGTH_LONG).show();
                         break;
                     case 2:
-                        Toast.makeText(MainActivity.this,"you clicked sent",Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivity.this, "you clicked sent", Toast.LENGTH_LONG).show();
                         startActivity(new Intent(getApplicationContext(), SentMailActivity.class));
                         break;
 
@@ -119,9 +126,30 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
+    private void rotateMail() {
+        Animation rotate = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate);
+        rotate.setDuration(900);
+        ((ImageView) findViewById(R.id.mail1)).startAnimation(rotate);
 
+        Animation rotate2 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate2);
+        rotate2.setDuration(1000);
+        ((ImageView) findViewById(R.id.mail2)).startAnimation(rotate2);
+
+        Animation rotate3 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate3);
+        rotate3.setDuration(1000);
+        ((ImageView) findViewById(R.id.mail3)).startAnimation(rotate3);
+    }
+
+    private void trigger() {
+        final ImageView trigger = (ImageView) findViewById(R.id.trigger);
+        trigger.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Animation rotate = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate_trigger);
+                rotate.setDuration(1000);
+                rotate.setFillAfter(true);
+                trigger.startAnimation(rotate);
+            }
+        });
     }
 }
