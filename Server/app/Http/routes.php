@@ -6,6 +6,8 @@ $api->version('v1', function ($api) {
 
 	// Set our namespace for the underlying routes
 	$api->group(['namespace' => 'Api\Controllers', 'middleware' => '\Barryvdh\Cors\HandleCors::class'], function ($api) {
+		$api->get('cardView', 'UserController@cardView');
+
 		$api->get('users', 'UserController@index');
 		$api->post('users', 'UserController@store');
 		$api->get('users/{id}', 'UserController@show');
