@@ -20,6 +20,7 @@
             android:label="Select paper material" />
         <activity
             android:name=".activity.WriteMessageContentActivity"
+            android:windowSoftInputMode="adjustPan"
             android:label="write your message" />
         <activity
             android:name=".activity.SentMailActivity"

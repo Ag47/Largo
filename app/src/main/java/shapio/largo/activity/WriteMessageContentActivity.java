@@ -1,18 +1,17 @@
 package shapio.largo.activity;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.widget.ArrayAdapter;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
-import com.andexert.expandablelayout.library.ExpandableLayoutListView;
-import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
-import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
+import com.nineoldandroids.animation.Animator;
 
 import shapio.largo.R;
 
@@ -36,21 +35,21 @@ public class WriteMessageContentActivity extends AppCompatActivity {
 //        final ExpandableLayoutListView expandableLayoutListView = (ExpandableLayoutListView) findViewById(R.id.listview);
 
 //        expandableLayoutListView.setAdapter(arrayAdapter);
+        send();
     }
 
     private void initPaperBackground() {
         mLayout = (RelativeLayout) findViewById(R.id.paper_background);
         Bundle paperBundle = getIntent().getExtras();
         String materialType = paperBundle.getString(this.getResources().getString(R.string.papers_material_type));
-        Log.v("oska",materialType );
+        Log.v("oska", materialType);
 
-        if(materialType.equals(this.getResources().getString(R.string.paper_general))){
-            Log.v("oska","in general");
+        if (materialType.equals(this.getResources().getString(R.string.paper_general))) {
+            Log.v("oska", "in general");
 
             mLayout.setBackground(this.getResources().getDrawable(R.drawable.general_theme));
-        }else if(materialType.equals(this.getResources().getString(R.string.paper_love)))
-        {
-            Log.v("oska","in love");
+        } else if (materialType.equals(this.getResources().getString(R.string.paper_love))) {
+            Log.v("oska", "in love");
             mLayout.setBackground(this.getResources().getDrawable(R.drawable.love_letter));
         }
 //        if(materialType.equals(this.getResources().getString(R.string.paper_apologize)));
@@ -100,5 +99,73 @@ public class WriteMessageContentActivity extends AppCompatActivity {
 //            }
 //        });
 
+    private void send() {
+        final ImageView send = (ImageView) findViewById(R.id.send);
+        final RelativeLayout paper_bg = (RelativeLayout) findViewById(R.id.paper_background);
+        final ImageView letter = (ImageView) findViewById(R.id.letter);
+        final ImageView letter_top = (ImageView) findViewById(R.id.letter_top);
 
+        send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                YoYo.with(Techniques.FadeIn).duration(1000).playOn(letter);
+                YoYo.with(Techniques.FadeIn).duration(1000).playOn(letter_top);
+                letter.setVisibility(View.VISIBLE);
+                letter_top.setVisibility(View.VISIBLE);
+                YoYo.with(Techniques.SlideOutDown)
+                        .duration(3000)
+                        .playOn(paper_bg);
+                YoYo.with(Techniques.FadeOut).withListener(new Animator.AnimatorListener() {
+                    @Override
+                    public void onAnimationStart(Animator animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        YoYo.with(Techniques.SlideOutRight)
+                                .duration(2000)
+                                .playOn(letter);
+                        YoYo.with(Techniques.SlideOutRight).withListener(new Animator.AnimatorListener() {
+                            @Override
+                            public void onAnimationStart(Animator animation) {
+
+                            }
+
+                            @Override
+                            public void onAnimationEnd(Animator animation) {
+                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            }
+
+                            @Override
+                            public void onAnimationCancel(Animator animation) {
+
+                            }
+
+                            @Override
+                            public void onAnimationRepeat(Animator animation) {
+
+                            }
+                        })
+                                .duration(2000)
+                                .playOn(letter_top);
+
+                    }
+
+                    @Override
+                    public void onAnimationCancel(Animator animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animator animation) {
+
+                    }
+                })
+                        .duration(3000)
+                        .playOn(send);
+
+            }
+        });
+    }
 }
