@@ -15,12 +15,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.SelectPaperThemeActivity"
-            android:label="Select paper material"/>
-        <activity android:name=".activity.WriteMessageContentActivity"
-            android:label="write your message"/>
-        <activity android:name=".activity.SentMailActivity"
-            android:label="Sent Mail"/>
+        <activity
+            android:name=".activity.SelectPaperThemeActivity"
+            android:label="Select paper material" />
+        <activity
+            android:name=".activity.WriteMessageContentActivity"
+            android:label="write your message" />
+        <activity
+            android:name=".activity.SentMailActivity"
+            android:label="Sent Mail" />
+        <activity
+            android:name=".activity.PeekActivity"
+            android:label="Peek Mail" />
     </application>
 
 </manifest>

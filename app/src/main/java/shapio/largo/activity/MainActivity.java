@@ -129,15 +129,34 @@ public class MainActivity extends AppCompatActivity {
     private void rotateMail() {
         Animation rotate = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate);
         rotate.setDuration(900);
-        ((ImageView) findViewById(R.id.mail1)).startAnimation(rotate);
+        ImageView mail = (ImageView) findViewById(R.id.mail1);
+        mail.startAnimation(rotate);
+        mail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), PeekActivity.class));
+            }
+        });
 
         Animation rotate2 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate2);
         rotate2.setDuration(1000);
-        ((ImageView) findViewById(R.id.mail2)).startAnimation(rotate2);
+        findViewById(R.id.mail2).startAnimation(rotate2);
+        findViewById(R.id.mail2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), PeekActivity.class));
+            }
+        });
 
         Animation rotate3 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate3);
         rotate3.setDuration(1000);
-        ((ImageView) findViewById(R.id.mail3)).startAnimation(rotate3);
+        findViewById(R.id.mail3).startAnimation(rotate3);
+        findViewById(R.id.mail3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), PeekActivity.class));
+            }
+        });
     }
 
     private void trigger() {
