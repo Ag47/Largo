@@ -43,8 +43,11 @@
             android:background="#F0EEFF">
 
             <TextView
+                android:id="@+id/tv"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="My Lovely Angel, There is a gift I want to give to you tomorrow"
+                android:textSize="28sp" />
         </RelativeLayout>
 
         <ImageView
@@ -53,6 +56,27 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:src="@drawable/letter_cover" />
+
+        <TextView
+            android:id="@+id/sender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="64dp"
+            android:layout_marginLeft="24dp"
+            android:text="Sender: Hacky"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="64dp"
+            android:layout_marginRight="24dp"
+            android:text="Time Left: 3hrs"
+            android:textSize="20sp" />
     </RelativeLayout>
 
     <com.aurelhubert.ahbottomnavigation.AHBottomNavigation

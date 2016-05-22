@@ -2,6 +2,7 @@ package shapio.largo.activity;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,9 +11,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
@@ -20,8 +22,6 @@ import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
 import java.util.ArrayList;
 
 import shapio.largo.R;
-import shapio.largo.adapter.ReceiveMailAdapter;
-import shapio.largo.helper.SimpleDividerItemDecoration;
 import shapio.largo.model.Mail;
 
 public class PeekActivity extends AppCompatActivity {
@@ -45,10 +45,13 @@ public class PeekActivity extends AppCompatActivity {
 //        initReceiveItem();
 //        initRecyclerView();
         handleBottomBarOnclick();
-//
 //        rotateMail();
 //        trigger();
+        font();
+
     }
+
+
 
     @Override
     protected void onStop() {
@@ -99,8 +102,7 @@ public class PeekActivity extends AppCompatActivity {
         });
     }
 
-    private void initPeekLayout()
-    {
+    private void initPeekLayout() {
         final RelativeLayout peek_layout = (RelativeLayout) findViewById(R.id.peekable_layout);
         peek_layout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,6 +113,15 @@ public class PeekActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void font() {
+        TextView textView = (TextView) findViewById(R.id.tv);
+        textView.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/happy.ttf"));
+        TextView sender = (TextView) findViewById(R.id.sender);
+        sender.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/happy.ttf"));
+        TextView timer = (TextView) findViewById(R.id.timer);
+        timer.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/happy.ttf"));
     }
 
 }

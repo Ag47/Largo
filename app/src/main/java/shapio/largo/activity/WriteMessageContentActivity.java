@@ -7,10 +7,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import com.andexert.expandablelayout.library.ExpandableLayoutListView;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.nineoldandroids.animation.Animator;
@@ -20,7 +24,11 @@ import shapio.largo.R;
 public class WriteMessageContentActivity extends AppCompatActivity {
     RelativeLayout mLayout;
     private Toolbar toolbar;
-//    private final String[] array = {"Add gift"};
+    private final String[] array = {"Add Delivery Time"};
+    private Button btn1, btn2, btn3;
+    private EditText getDeliveryTimeEdt;
+
+    ExpandableLayoutListView expandableLayoutListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,16 +39,44 @@ public class WriteMessageContentActivity extends AppCompatActivity {
 //        initBottomBar();
         initPaperBackground();
 
-//        handleBottomBarOnclick();
 
-//        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.view_row, R.id.header_text, array);
-//        final ExpandableLayoutListView expandableLayoutListView = (ExpandableLayoutListView) findViewById(R.id.listview);
+        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.view_row, R.id.header_text, array);
+        expandableLayoutListView = (ExpandableLayoutListView) findViewById(R.id.listview);
 
-//        expandableLayoutListView.setAdapter(arrayAdapter);
+        expandableLayoutListView.setAdapter(arrayAdapter);
+
         send();
         setFont();
+
+
+        btn1 = (Button) findViewById(R.id.btn1);
+        btn2 = (Button) findViewById(R.id.btn2);
+        btn3 = (Button) findViewById(R.id.btn3);
+
+        getDeliveryTimeEdt = (EditText) findViewById(R.id.edt_time);
+//        handleOnclickButton();
     }
 
+    private void handleOnclickButton() {
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getDeliveryTimeEdt.setText(btn1.getText().toString());
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getDeliveryTimeEdt.setText(btn2.getText().toString());
+            }
+        });
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getDeliveryTimeEdt.setText(btn3.getText().toString());
+            }
+        });
+    }
     private void initPaperBackground() {
         mLayout = (RelativeLayout) findViewById(R.id.paper_background);
         Bundle paperBundle = getIntent().getExtras();
@@ -103,6 +139,7 @@ public class WriteMessageContentActivity extends AppCompatActivity {
 //        });
 
     private void send() {
+
         final ImageView send = (ImageView) findViewById(R.id.send);
         final RelativeLayout paper_bg = (RelativeLayout) findViewById(R.id.paper_background);
         final ImageView letter = (ImageView) findViewById(R.id.letter);
@@ -111,6 +148,7 @@ public class WriteMessageContentActivity extends AppCompatActivity {
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                expandableLayoutListView.setVisibility(View.GONE);
                 YoYo.with(Techniques.FadeIn).duration(1000).playOn(letter);
                 YoYo.with(Techniques.FadeIn).duration(1000).playOn(letter_top);
                 letter.setVisibility(View.VISIBLE);
