@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="?attr/actionBarSize"
+    tools:context=".activity.MainActivity">
+
+    <ImageView
+        android:id="@+id/letter"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-400dp"
+        android:src="@drawable/letter"
+        android:visibility="invisible" />
+
+    <RelativeLayout
+        android:id="@+id/paper_background"
+        android:layout_width="310dp"
+        android:layout_height="400dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/editText"
+            android:layout_width="fill_parent"
+            android:layout_height="400dp"
+            android:background="@android:color/transparent"
+            android:gravity="top|left"
+            android:lines="30"
+            android:maxLines="30"
+            android:minLines="6"
+            android:scrollbars="vertical"
+            android:textSize="28sp" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/send"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="30dp"
+        android:elevation="10dp"
+        android:visibility="gone"
+        android:src="@drawable/send_mail_btn" />
+
+    <ImageView
+        android:id="@+id/letter_top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-400dp"
+        android:src="@drawable/letter_cover"
+        android:visibility="invisible" />
+
+
+</RelativeLayout>

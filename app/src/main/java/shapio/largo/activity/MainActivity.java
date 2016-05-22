@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         rotateMail();
         trigger();
+        mailbox();
     }
 
     @Override
@@ -168,6 +169,17 @@ public class MainActivity extends AppCompatActivity {
                 rotate.setDuration(1000);
                 rotate.setFillAfter(true);
                 trigger.startAnimation(rotate);
+            }
+        });
+    }
+
+    private void mailbox()
+    {
+        ImageView mailbox = (ImageView) findViewById(R.id.mail_box);
+        mailbox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), ReadMessageContentActivity.class));
             }
         });
     }
