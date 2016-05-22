@@ -12,12 +12,14 @@
 	<body>
 		<div id="page-wrapper">
 			<section id="banner">
+				<br />
+				<br />
+				<br />
 				<div class="inner">
-					<div class="logo"><span class="icon fa-code"></span></div>
-					<h2>Largo</h2>
+					<div class="logo"><img src="/images/logo.png" width="150px"></div>
 					<p>An app that let you share your deep feeling, an unforgettable experience</p>
 				</div>
-			</section><br />
+			</section><br /><br /><br /><br /><br /><br />
 			<section id="footer">
 				<div class="inner">
 					<h2 class="major">Get in touch</h2>
@@ -25,15 +27,15 @@
 					<form method="post" action="#">
 						<div class="field">
 							<label for="name">Name</label>
-							<input type="text" name="name" id="name" />
+							<input type="text" name="name" id="name" required/>
 						</div>
 						<div class="field">
 							<label for="email">Email</label>
-							<input type="email" name="email" id="email" />
+							<input type="email" name="email" id="email" required/>
 						</div>
 						<div class="field">
 							<label for="message">Message</label>
-							<textarea name="message" id="message" rows="4"></textarea>
+							<textarea name="message" id="message" rows="4" required></textarea>
 						</div>
 						<ul class="actions">
 							<li><input type="submit" value="Send Message" /></li>
