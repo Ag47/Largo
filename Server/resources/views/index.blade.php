@@ -13,11 +13,10 @@
 		<div id="page-wrapper">
 			<section id="banner">
 				<div class="inner">
-					<div class="logo"><span class="icon fa-code"></span></div>
-					<h2>Largo</h2>
+					<div class="logo"><img src="/images/logo.png" width="150px"></div>
 					<p>An app that let you share your deep feeling, an unforgettable experience</p>
 				</div>
-			</section><br />
+			</section><br /><br /><br /><br /><br /><br />
 			<section id="footer">
 				<div class="inner">
 					<h2 class="major">Get in touch</h2>
