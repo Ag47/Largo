@@ -14,6 +14,7 @@
 			<section id="banner">
 				<br />
 				<br />
+				<br />
 				<div class="inner">
 					<div class="logo"><img src="/images/logo.png" width="150px"></div>
 					<p>An app that let you share your deep feeling, an unforgettable experience</p>
