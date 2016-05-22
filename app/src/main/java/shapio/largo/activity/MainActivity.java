@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Animation rotate3 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate3);
-        rotate3.setDuration(1000);
+        rotate3.setDuration(1200);
         findViewById(R.id.mail3).startAnimation(rotate3);
         findViewById(R.id.mail3).setOnClickListener(new View.OnClickListener() {
             @Override

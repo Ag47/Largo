@@ -3,12 +3,12 @@
     android:shareInterpolator="false">
 
     <rotate
-        android:fromDegrees="345"
+        android:fromDegrees="20"
         android:interpolator="@android:anim/linear_interpolator"
         android:pivotX="50%"
         android:pivotY="50%"
         android:repeatCount="infinite"
         android:repeatMode="reverse"
-        android:toDegrees="385" />
+        android:toDegrees="60" />
 
 </set>

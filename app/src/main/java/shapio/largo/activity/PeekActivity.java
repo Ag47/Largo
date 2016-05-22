@@ -44,7 +44,7 @@ public class PeekActivity extends AppCompatActivity {
         initPeekLayout();
 //        initReceiveItem();
 //        initRecyclerView();
-//        handleBottomBarOnclick();
+        handleBottomBarOnclick();
 //
 //        rotateMail();
 //        trigger();
@@ -72,9 +72,31 @@ public class PeekActivity extends AppCompatActivity {
         bottomNavigation.addItem(item2);
         bottomNavigation.addItem(item3);
         bottomNavigation.setDefaultBackgroundColor(Color.parseColor("#FEFEFE"));
-        bottomNavigation.setNotification("4", 1);
+        bottomNavigation.setNotification("3", 1);
         bottomNavigation.setCurrentItem(1);
 
+    }
+
+    private void handleBottomBarOnclick() {
+        bottomNavigation.setOnTabSelectedListener(new AHBottomNavigation.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(int position, boolean wasSelected) {
+                switch (position) {
+                    case 0:
+//                        Toast.makeText(MainActivity.this, "you clicked write", Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(getApplicationContext(), SelectPaperThemeActivity.class));
+                        break;
+                    case 1:
+//                        Toast.makeText(MainActivity.this, "you clicked Receive", Toast.LENGTH_LONG).show();
+                        break;
+                    case 2:
+//                        Toast.makeText(MainActivity.this, "you clicked sent", Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(getApplicationContext(), SentMailActivity.class));
+                        break;
+
+                }
+            }
+        });
     }
 
     private void initPeekLayout()
