@@ -31,7 +31,7 @@ public class SentMailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_sent_mail);
 
         initToolBar();
         initBottomBar();
@@ -43,7 +43,7 @@ public class SentMailActivity extends AppCompatActivity {
     private void initRecyclerView() {
         mLayoutManager = new LinearLayoutManager(this.getApplication());
         mLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        receiveMailRecyclerView = (RecyclerView) findViewById(R.id.recycler_receive_mail);
+        receiveMailRecyclerView = (RecyclerView) findViewById(R.id.recycler_sent_mail);
         mAdapter = new SentMailAdapter(this, arrayListMailItem);
         receiveMailRecyclerView.setLayoutManager(mLayoutManager);
         receiveMailRecyclerView.setAdapter(mAdapter);
