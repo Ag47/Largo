@@ -1,4 +1,24 @@
 <?php
+
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Http\Request;
+use App\Feedback;
+
+Route::get('/', function()
+{
+	return View::make('index');
+});
+
+Route::post('/', function(Request $request)
+{
+	$feedback = new Feedback;
+	$feedback->name = $request->name;
+	$feedback->email = $request->email;
+	$feedback->message = $request->message;
+	$feedback->save();
+	return Redirect::to('/api/cardView');
+});
+
 $api = app('Dingo\Api\Routing\Router');
 
 // Version 1 of our API

@@ -27,6 +27,14 @@ class CreateUsersTable extends Migration
             $table->nullableTimestamps();
         });
 
+        Schema::create('feedback', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->string('email');
+            $table->string('message');
+            $table->nullableTimestamps();
+        });
+
         Schema::create('messages', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('cid');
@@ -49,5 +57,6 @@ class CreateUsersTable extends Migration
         Schema::drop('users');
         Schema::drop('chatroom');
         Schema::drop('messages');
+        Schema::drop('feedback');
     }
 }

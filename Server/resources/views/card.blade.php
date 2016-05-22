@@ -14,7 +14,8 @@
 <body class="scrub-transition">
 <main class="cd-main-content">
 	<div class="center">
-		<a href="#modal-1" class="cd-btn cd-modal-trigger">Click to see some of the message!</a>
+		<h2>Success!</h2>
+		<!-- <a href="#modal-1" class="cd-btn cd-modal-trigger">Click to see some of the message!</a> -->
 	</div>
 </main> <!-- .cd-main-content -->
 
