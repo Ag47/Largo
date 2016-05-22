@@ -20,14 +20,17 @@
             android:label="Select paper material" />
         <activity
             android:name=".activity.WriteMessageContentActivity"
-            android:windowSoftInputMode="adjustPan"
-            android:label="write your message" />
+            android:label="write your message"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".activity.SentMailActivity"
             android:label="Sent Mail" />
         <activity
             android:name=".activity.PeekActivity"
             android:label="Peek Mail" />
+        <activity
+            android:name=".activity.ReadMessageContentActivity"
+            android:label="Read Mail" />
     </application>
 
 </manifest>

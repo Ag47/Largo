@@ -97,15 +97,15 @@ public class SentMailActivity extends AppCompatActivity {
                 switch (position)
                 {
                     case 0:
-                        Toast.makeText(SentMailActivity.this,"you clicked write",Toast.LENGTH_LONG).show();
+//                        Toast.makeText(SentMailActivity.this,"you clicked write",Toast.LENGTH_LONG).show();
                         startActivity(new Intent(SentMailActivity.this, SelectPaperThemeActivity.class));
                         break;
                     case 1:
-                        Toast.makeText(SentMailActivity.this,"you clicked Receive",Toast.LENGTH_LONG).show();
+//                        Toast.makeText(SentMailActivity.this,"you clicked Receive",Toast.LENGTH_LONG).show();
                         startActivity(new Intent(getApplicationContext(),MainActivity.class));
                         break;
                     case 2:
-                        Toast.makeText(SentMailActivity.this,"you clicked sent",Toast.LENGTH_LONG).show();
+//                        Toast.makeText(SentMailActivity.this,"you clicked sent",Toast.LENGTH_LONG).show();
                         break;
 
                 }

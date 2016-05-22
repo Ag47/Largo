@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         rotateMail();
         trigger();
+        mailbox();
     }
 
     @Override
@@ -110,14 +111,14 @@ public class MainActivity extends AppCompatActivity {
             public void onTabSelected(int position, boolean wasSelected) {
                 switch (position) {
                     case 0:
-                        Toast.makeText(MainActivity.this, "you clicked write", Toast.LENGTH_LONG).show();
+//                        Toast.makeText(MainActivity.this, "you clicked write", Toast.LENGTH_LONG).show();
                         startActivity(new Intent(MainActivity.this, SelectPaperThemeActivity.class));
                         break;
                     case 1:
-                        Toast.makeText(MainActivity.this, "you clicked Receive", Toast.LENGTH_LONG).show();
+//                        Toast.makeText(MainActivity.this, "you clicked Receive", Toast.LENGTH_LONG).show();
                         break;
                     case 2:
-                        Toast.makeText(MainActivity.this, "you clicked sent", Toast.LENGTH_LONG).show();
+//                        Toast.makeText(MainActivity.this, "you clicked sent", Toast.LENGTH_LONG).show();
                         startActivity(new Intent(getApplicationContext(), SentMailActivity.class));
                         break;
 
@@ -168,6 +169,17 @@ public class MainActivity extends AppCompatActivity {
                 rotate.setDuration(1000);
                 rotate.setFillAfter(true);
                 trigger.startAnimation(rotate);
+            }
+        });
+    }
+
+    private void mailbox()
+    {
+        ImageView mailbox = (ImageView) findViewById(R.id.mail_box);
+        mailbox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), ReadMessageContentActivity.class));
             }
         });
     }

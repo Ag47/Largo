@@ -53,14 +53,14 @@ public class TempActivity extends AppCompatActivity {
                 switch (position)
                 {
                     case 0:
-                        Toast.makeText(TempActivity.this,"you clicked write",Toast.LENGTH_LONG).show();
+//                        Toast.makeText(TempActivity.this,"you clicked write",Toast.LENGTH_LONG).show();
                         startActivity(new Intent(TempActivity.this, SelectPaperThemeActivity.class));
                         break;
                     case 1:
-                        Toast.makeText(TempActivity.this,"you clicked Receive",Toast.LENGTH_LONG).show();
+//                        Toast.makeText(TempActivity.this,"you clicked Receive",Toast.LENGTH_LONG).show();
                         break;
                     case 2:
-                        Toast.makeText(TempActivity.this,"you clicked sent",Toast.LENGTH_LONG).show();
+//                        Toast.makeText(TempActivity.this,"you clicked sent",Toast.LENGTH_LONG).show();
                         break;
 
                 }

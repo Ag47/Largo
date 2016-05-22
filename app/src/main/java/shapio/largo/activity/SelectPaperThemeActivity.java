@@ -105,14 +105,14 @@ public class SelectPaperThemeActivity extends AppCompatActivity {
                 switch (position)
                 {
                     case 0:
-                        Toast.makeText(SelectPaperThemeActivity.this,"you clicked write",Toast.LENGTH_LONG).show();
+//                        Toast.makeText(SelectPaperThemeActivity.this,"you clicked write",Toast.LENGTH_LONG).show();
                         break;
                     case 1:
-                        Toast.makeText(SelectPaperThemeActivity.this,"you clicked Receive",Toast.LENGTH_LONG).show();
+//                        Toast.makeText(SelectPaperThemeActivity.this,"you clicked Receive",Toast.LENGTH_LONG).show();
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         break;
                     case 2:
-                        Toast.makeText(SelectPaperThemeActivity.this,"you clicked sent",Toast.LENGTH_LONG).show();
+//                        Toast.makeText(SelectPaperThemeActivity.this,"you clicked sent",Toast.LENGTH_LONG).show();
                         startActivity(new Intent(getApplicationContext(), SentMailActivity.class));
                         break;
 
